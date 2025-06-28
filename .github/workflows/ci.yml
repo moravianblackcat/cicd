@@ -8,10 +8,9 @@ on:
       IMAGE_NAME:
         required: true
         type: string
-    secrets: 
+    secrets:
       ENCRYPTION_PASSWORD:
         required: true
-        type: string
 
 env:
   ENCRYPTION_PASSWORD: ${{ secrets.ENCRYPTION_PASSWORD }}
