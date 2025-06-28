@@ -8,9 +8,9 @@ on:
       IMAGE_NAME:
         required: true
         type: string
-      ENCRYPTION_PASSWORD:
-        required: true
-        type: string
+
+env:
+  ENCRYPTION_PASSWORD: ${{ secrets.ENCRYPTION_PASSWORD }}
 
 jobs:
   build:
