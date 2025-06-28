@@ -10,7 +10,7 @@ on:
         type: string
     secrets:
       ENCRYPTION_PASSWORD:
-        required: true
+        required: false
 
 env:
   ENCRYPTION_PASSWORD: ${{ secrets.ENCRYPTION_PASSWORD }}
