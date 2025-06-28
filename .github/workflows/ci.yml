@@ -53,12 +53,21 @@ jobs:
         with:
           name: problems-report
           path: build/reports/problems/problems-report.html
+          retention-days: 5
       - name: Upload test report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: test-report
           path: build/reports/tests/test/
+          retention-days: 5
+      - name: Upload integration test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: integration-test-report
+          path: build/reports/cucumber-report.html
+          retention-days: 5
   build-and-push-image:
     needs: build
     runs-on: ubuntu-latest
