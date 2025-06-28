@@ -8,6 +8,7 @@ on:
       IMAGE_NAME:
         required: true
         type: string
+    secrets: 
       ENCRYPTION_PASSWORD:
         required: true
         type: string
