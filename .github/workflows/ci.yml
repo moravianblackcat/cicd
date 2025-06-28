@@ -35,6 +35,18 @@ jobs:
         with:
           name: jar-artifact
           path: build/libs
+      - name: Upload problems report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: problems-report
+          path: build/reports/problems/problems-report.html
+      - name: Upload test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: build/reports/tests/test/index.html
   build-and-push-image:
     needs: build
     runs-on: ubuntu-latest
