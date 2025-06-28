@@ -3,9 +3,9 @@ on:
   workflow_call:
 
 env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
-  ENCRYPTION_PASSWORD: ${{ secrets.ENCRYPTION_PASSWORD }}
+  REGISTRY: ${{ inputs.REGISTRY }}
+  IMAGE_NAME: ${{ inputs.IMAGE_NAME }}
+  ENCRYPTION_PASSWORD: ${{ inputs.ENCRYPTION_PASSWORD }}
 
 jobs:
   build:
