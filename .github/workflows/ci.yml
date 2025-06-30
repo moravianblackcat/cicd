@@ -8,6 +8,9 @@ on:
       IMAGE_NAME:
         required: true
         type: string
+      SLEEP_SECONDS_FOR_SERVICES:
+        required: true
+        type: number
     secrets:
       ENCRYPTION_PASSWORD:
         required: false
@@ -39,6 +42,8 @@ jobs:
         uses: hoverkraft-tech/compose-action@v2.0.1
         with:
           compose-file: docker-compose.yml
+      - name: Wait for services
+        run: sleep ${{ inputs.SLEEP_SECONDS_FOR_SERVICES }}
       - name: Run integration tests
         uses: gradle/actions/setup-gradle@v3
         with:
